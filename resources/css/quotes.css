@@ -1,0 +1,82 @@
+/*-----------------------------------------------------
+   BUTTONS
+-----------------------------------------------------*/ 
+.btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.btn-primary { background: #0d6efd; }
+.btn-primary:hover { background: #0b5ed7; }
+.btn-secondary { background: #93f055; }
+.btn-secondary:hover { background: #36e4d5; }
+
+.btn-info { background: #0dcaf0; }
+.btn-info:hover { background: #0bb9dd; }
+
+.btn-warning { background: #f0ad4e; color: #222; }
+.btn-warning:hover { background: #e0993f; }
+
+.btn-danger { background: #dc3545; }
+.btn-danger:hover { background: #bb2d3b; }
+
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+/* -----------------------------------------------------
+   FORM INPUT
+----------------------------------------------------- */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.modal-header,
+.modal-footer {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 15px 0;
+}
+
+.close-btn {
+    background: #dc3545;
+    border: none;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.modal-lg {
+    max-width: 900px;
+}
+
+
+.item-row .form-control {
+    height: 32px;
+}

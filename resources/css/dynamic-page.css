@@ -1,0 +1,255 @@
+.container {
+    width: fit-content;
+    max-width: 150%;
+    margin: 80px auto;
+    background: #ffffff;
+    overflow-x:auto;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+}
+.container h1{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.swal2-container {
+    z-index: 4000 !important;
+}
+
+ form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    margin:auto;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+.modal {
+  button, input[type=submit]{
+    width: 30%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
+.modal-buttons{
+  display: flex;
+  justify-content:space-between;
+}
+h3{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+select,
+textarea,
+input[type=datetime-local],
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #004d99;
+}
+
+td, th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color:#4CAF50;
+    color:white;
+}
+table{
+     border-collapse:collapse;
+     width: 100%; 
+}
+
+#searchInput{
+    float:left;
+    padding: 8px 16px; 
+    border-radius: 5px;
+
+}
+
+.btn-delete{
+    padding: 8px 16px; 
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #e74c3c;
+    color: white;
+    border:none; 
+}
+.btn-cancel{
+    padding: 8px 16px; 
+    border-radius: 5px;
+    cursor: pointer;
+    margin:0px;
+    text-decoration: none;
+    background-color: #e74c3c;
+    color: white;
+    border:none; 
+}
+.btn-add{
+    float:right;
+    padding: 8px 16px; 
+    cursor: pointer;
+    margin:0px;
+    text-decoration: none;
+    background-color: green;
+    color: white;
+}
+.btn-edit{
+    padding: 8px 16px; 
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #f39c12;
+    color: white;
+    border:none; 
+}
+.btn-download{
+    padding: 8px 16px; 
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgb(125, 69, 230);
+    color: white;
+    border:none; 
+}
+.container img,.container video {
+  height:auto;
+  max-width: 100%;
+  border-radius: 8px;
+}
+.desc{
+  padding:0.125rem;
+  text-align:center;
+}
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.file-item {
+  background: #ffffff;
+  padding: 0;
+  margin:0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  width: 250px;
+  text-align: center;
+}
+
+#galleryForm {
+   width: 50%;
+   input[type="file"], 
+   input[type=text] {
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      background: #fff;
+      cursor: pointer;
+      margin:10px;
+      transition: 0.3s;
+    }
+  input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+.sections-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+  /* Each section */
+.item-section {
+  flex: 1;
+  min-width: 300px;
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#my-profile img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.single-btn button{
+  width: 90%;
+}
+
+#viewDemoContent{
+  img,video{
+   max-width: 700px;
+  }
+} 
+@media (max-width: 768px){
+   #galleryForm{
+      width: 100%;
+    }
+
+    .modal-content{
+      width: 100%;
+      form{
+        width: 100%;
+      }
+    }
+    .sections-container {
+      flex-direction: column;
+    }
+    .file-item {
+      width: 100%;
+    }
+   table button{
+    width: 90%;
+   } 
+}

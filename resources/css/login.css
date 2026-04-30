@@ -1,0 +1,55 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Card */
+.design-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Image */
+.image-container img {
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Content */
+.content-container {
+    padding: 40px;
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Links */
+.forgot-link,
+.register-link {
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.forgot-link:hover,
+.register-link:hover {
+    text-decoration: underline;
+}
+
+
+.btn-primary {
+    border-radius: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .content-container {
+        padding: 30px;
+    }
+}
