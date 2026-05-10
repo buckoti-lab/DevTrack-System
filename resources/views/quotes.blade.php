@@ -1,4 +1,4 @@
- @vite(['resources/css/quotes.css'])
+@vite(['resources/css/quote.css'])
 
 <div class="container">
 
@@ -44,7 +44,7 @@
                         <td>{{ $quote->created_at->format('d M Y') }}</td>
 
                         <td>
-                            <button class="btn btn-sm btn-info"
+                            <!-- <button class="btn btn-sm btn-info"
                                     onclick="viewQuote({{ $quote->id }})">
                                 View
                             </button>
@@ -57,7 +57,11 @@
                             <button class="btn btn-sm btn-danger"
                                     onclick="deleteQuote({{ $quote->id }})">
                                 Delete
-                            </button>
+                            </button> -->
+
+                            <button class="btn btn-sm btn-info btn-view" data-id="{{ $quote->id }}">View</button>
+                            <button class="btn btn-sm btn-warning btn-edit" data-quote='@json($quote)'>Edit</button>
+                            <button class="btn btn-sm btn-danger btn-delete" data-id="{{ $quote->id }}">Delete</button>
                         </td>
                     </tr>
                 @endforeach
@@ -308,4 +312,5 @@
 </div>
 
 </div>
- @vite(['resources/js/quotes.js'])
+
+@vite(['resources/js/quote.js'])

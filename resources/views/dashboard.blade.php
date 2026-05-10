@@ -6,8 +6,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Dashboard</title>
 
-    {{-- Laravel Vite --}}    
-    @vite(['resources/css/app.css','resources/css/dashboard.css','resources/css/dynamic-page.css','resources/css/sweetalert2.min.css','resources/css/dataTables.bootstrap5.min.css','resources/css/bootstrap.min.css']) 
+    {{-- Laravel Vite css --}}    
+    @vite(['resources/css/app.css','resources/css/dashboard.css','resources/css/dynamic-page.css','resources/css/dataTables.bootstrap5.min.css','resources/css/bootstrap.min.css']) 
     
 </head>
 <body>
@@ -91,7 +91,7 @@
     </section>
     </div>
 
-  {{-- Laravel Vite --}}    
+{{-- Laravel Vite scripts --}}    
 @vite([
  'resources/js/jquery-3.7.1.min.js',         
 
@@ -104,63 +104,20 @@
  'resources/js/app.js',
  'resources/js/dashboard.js',
  'resources/js/functions.js',
- 'resources/js/progress.js',
- 'resources/js/sweetalert2.all.min.js'
+
 ])
 
-<script src="storage/libraries/sweetalert2.all.min.js"></script>
+<!--  'resources/js/sweetalert2.all.min.js' 'resources/css/sweetalert2.min.css  'resources/js/progress.js',
+ 'resources/js/quote.js', -->
+<!-- <script src="storage/libraries/sweetalert2.all.min.js"></script> -->
 
 @guest
-<script>window.location = "/login";</script>
+<!-- <script>window.location = "/login";</script> -->
+ <!-- <script>window.location = "{{ route('get.login') }}"</script> -->
+  <script>
+    window.location.href = "{{ route('get.login') }}";
+</script>
 @endguest
 
-
-<script>
-  // ===== OPEN EDIT MODAL FUNCTION =====
-function editUser(user){
-    $("#edit_first_name").val(user.first_name);
-    $("#edit_second_name").val(user.second_name);
-    $("#edit_last_name").val(user.last_name);
-    $("#edit_email").val(user.email);
-    $("#edit_phone").val(user.phone ?? '');
-    $("#edit_sex").val(user.sex);
-    $("#edit_role").val(user.role);
-
-    $("#editForm").data('userId', user.id);
-    $("#editModal").fadeIn();
-}
-
-
-// ===== DELETE USER =====
-function deleteUser(userId){
-    Swal.fire({
-        title: 'Are you sure?',
-        text: 'This action cannot be undone.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!'
-    }).then(result => {
-        if(result.isConfirmed){
-            $.ajax({
-                url: "/users/delete/" + userId,
-                type: "DELETE",
-                data: {_token: '{{ csrf_token() }}'},
-                success: function(response){
-                    if(response.success){
-                       // Swal.fire("Success", response.message, "success").then(() => location.reload());
-                        Swal.fire("Success", response.message, "success").then(() => $('a[data-content="users"]').trigger('click'));
-                    } else {
-                        Swal.fire("Error", response.message, "error");
-                    }
-                },
-                error: function(xhr){
-                    Swal.fire("Error", "Failed to delete user: " + xhr.responseText, "error");
-                }
-            });
-        }
-    });
-}
-
-</script>
 </body>
 </html>

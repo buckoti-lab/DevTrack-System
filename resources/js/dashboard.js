@@ -4,6 +4,10 @@ $.ajaxSetup({
   }
 })    
 
+// ========= Importing sweetalert2 ===========
+import Swal from "sweetalert2";
+window.Swal = Swal;
+
 /*=======Dashboard scripts=======*/
 $(document).ready(function(e){
        $("#lower-content").load("home", function(response, status, xhr) {
@@ -61,3 +65,49 @@ $(document).ready(function(e){
  });
 
 })
+
+
+function editUser(user){
+    $("#edit_first_name").val(user.first_name);
+    $("#edit_second_name").val(user.second_name);
+    $("#edit_last_name").val(user.last_name);
+    $("#edit_email").val(user.email);
+    $("#edit_phone").val(user.phone ?? '');
+    $("#edit_sex").val(user.sex);
+    $("#edit_role").val(user.role);
+
+    $("#editForm").data('userId', user.id);
+    $("#editModal").fadeIn();
+}
+
+
+// ===== DELETE USER =====
+function deleteUser(userId){
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'This action cannot be undone.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!'
+    }).then(result => {
+        if(result.isConfirmed){
+            $.ajax({
+                url: "/users/delete/" + userId,
+                type: "DELETE",
+                data: {_token: '{{ csrf_token() }}'},
+                success: function(response){
+                    if(response.success){
+                        Swal.fire("Success", response.message, "success").then(() => $('a[data-content="users"]').trigger('click'));
+                    } else {
+                        Swal.fire("Error", response.message, "error");
+                    }
+                },
+                error: function(xhr){
+                    Swal.fire("Error", "Failed to delete user: " + xhr.responseText, "error");
+                }
+            });
+        }
+    });
+}
+
+

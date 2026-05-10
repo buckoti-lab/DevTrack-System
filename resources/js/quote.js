@@ -2,10 +2,25 @@ $(document).ready(function () {
     
     $('#quotes-table').DataTable();
 
-    // =======================
-    // OPEN / CLOSE MODALS
-    // =======================
+    // ====== Buttons ==========
+    $(".btn-view").on("click",function(){
+        let id = $(this).data("id");
+        viewQuote(id);
+     });
 
+    $(".btn-edit").on("click",function(){
+        let qd = $(this).data("quote");
+        editQuote(qd);
+     });
+
+    $(".btn-delete").on("click",function(){
+        let id = $(this).data("id");
+        deleteQuote(id);
+     });
+
+
+
+    // OPEN & CLOSE MODALS
     $("#openCreateModal").click(() => $("#createModal").modal("show"));
     $("#cancelCreate").click(() => $("#createModal").modal("hide"));
     $("#cancelEdit").click(() => $("#editModal").modal("hide"));
@@ -71,6 +86,65 @@ $(document).ready(function () {
             }
         });
     });
+
+
+
+
+
+
+        let AddItemIndex = 1;
+        let EditItemIndex = 1;
+
+
+        $("#addItemRow").click(function () {
+
+            $("#items-container").append(`
+                <div class="item-row row mb-2">
+                    <div class="col-5">
+                        <input type="text" name="items[${AddItemIndex}][name]" class="form-control" placeholder="Item name">
+                    </div>
+
+                    <div class="col-3">
+                        <input type="number" name="items[${AddItemIndex}][quantity]" class="form-control" placeholder="Qty">
+                    </div>
+
+                    <div class="col-3">
+                        <input type="number" name="items[${AddItemIndex}][price]" class="form-control" placeholder="Price">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="button" class="btn btn-danger w-100 removeItemRow">X</button>
+                    </div>
+                </div>
+            `);
+            AddItemIndex++;
+        });
+
+        $("#addEditItemRow").click(function () {
+
+            $("#edit-items-container").append(`
+                <div class="item-row row mb-2">
+                    <div class="col-5">
+                        <input type="text" name="items[${EditItemIndex}][name]" class="form-control" placeholder="Item name">
+                    </div>
+
+                    <div class="col-3">
+                        <input type="number" name="items[${EditItemIndex}][quantity]" class="form-control" placeholder="Qty">
+                    </div>
+
+                    <div class="col-3">
+                        <input type="number" name="items[${EditItemIndex}][price]" class="form-control" placeholder="Price">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="button" class="btn btn-danger w-100 removeItemRow">X</button>
+                    </div>
+                </div>
+            `);
+
+            EditItemIndex++;
+        });
+
 
 }); 
 
@@ -209,67 +283,6 @@ function viewQuote(quoteId) {
 
     $("#viewModal").modal("show");
 }
-
-
-
-// =====================
-// ADD ITEM ROWS
-// =====================
-$(document).ready(function(){
-    let AddItemIndex = 1;
-    let EditItemIndex = 1;
-
-
-$("#addItemRow").click(function () {
-
-    $("#items-container").append(`
-        <div class="item-row row mb-2">
-            <div class="col-5">
-                <input type="text" name="items[${AddItemIndex}][name]" class="form-control" placeholder="Item name">
-            </div>
-
-            <div class="col-3">
-                <input type="number" name="items[${AddItemIndex}][quantity]" class="form-control" placeholder="Qty">
-            </div>
-
-            <div class="col-3">
-                <input type="number" name="items[${AddItemIndex}][price]" class="form-control" placeholder="Price">
-            </div>
-
-            <div class="col-1">
-                <button type="button" class="btn btn-danger w-100 removeItemRow">X</button>
-            </div>
-        </div>
-    `);
-    AddItemIndex++;
-});
-
-$("#addEditItemRow").click(function () {
-
-    $("#edit-items-container").append(`
-        <div class="item-row row mb-2">
-            <div class="col-5">
-                <input type="text" name="items[${EditItemIndex}][name]" class="form-control" placeholder="Item name">
-            </div>
-
-            <div class="col-3">
-                <input type="number" name="items[${EditItemIndex}][quantity]" class="form-control" placeholder="Qty">
-            </div>
-
-            <div class="col-3">
-                <input type="number" name="items[${EditItemIndex}][price]" class="form-control" placeholder="Price">
-            </div>
-
-            <div class="col-1">
-                <button type="button" class="btn btn-danger w-100 removeItemRow">X</button>
-            </div>
-        </div>
-    `);
-
-    EditItemIndex++;
-});
-
-});
 
 $(document).on("click", ".removeItemRow", function () {
     $(this).closest(".item-row").remove();

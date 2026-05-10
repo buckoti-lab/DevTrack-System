@@ -1,7 +1,27 @@
-
 $(document).ready(function () {
     $('#tasksTable').DataTable();
-    // $('#demoTable').DataTable();
+    
+
+      $(".btn-progress-view").on("click",function(){
+            alert("why")
+        })
+
+    // ====== Buttons ==========
+    $(".btn-progress-view").on("click",function(){
+        let id = $(this).data("id");
+        openTasksModal(id);
+     });
+
+    $(".btn-edit").on("click",function(){
+        let id = $(this).data("id");
+        openEditProjectModal(id);
+     });
+
+    $(".btn-demo-view").on("click",function(){
+        let id = $(this).data("id");
+        openDemoModal(id);
+     });
+
 });
 
 function openTasksModal(projectId) {

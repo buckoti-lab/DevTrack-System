@@ -38,7 +38,7 @@
             </td>
 
             <td>
-                <button class="btn btn-sm btn-primary"
+                <!-- <button class="btn btn-sm btn-primary"
                     onclick="openTasksModal({{ $project->id }})">
                     View Progress
                 </button>
@@ -51,7 +51,10 @@
                 <button class="btn btn-sm btn-primary"
                     onclick="openDemoModal({{ $project->project->id }})">
                     View Demo
-                </button>
+                </button> -->
+                <button class="btn btn-sm btn-primary btn-progress-view" data-id="{{ $project->id }}">View Progress</button>
+                <button class="btn btn-sm btn-primary btn-edit" data-id="{{ $project->project->id}}">Edit</button>
+                <button class="btn btn-sm btn-primary btn-demo-view" data-id="{{ $project->project->id }}">View Demo</button>
             </td>
         </tr>
         @endif
@@ -265,3 +268,10 @@
         </div>
     </div>
 </div>
+
+<script>
+//   $(".btn-progress-view").on("click",function(){
+//     alert("why")
+//   })
+</script>
+@vite(['resources/js/progress.js'])

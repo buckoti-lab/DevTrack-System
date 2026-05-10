@@ -6,8 +6,8 @@ $(document).ready(function(e){
     const formData = new FormData(this);
 
     $.ajax({
-    // url: "{{ route('post.login') }}",
-    url: "login",
+    // url: `{{ route('post.login') }}`,
+    url: `login`,
     method: 'POST',
     data: formData,
     processData:false,

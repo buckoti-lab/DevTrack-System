@@ -8,10 +8,6 @@ use App\Models\Announcement;
 
 class AnnouncementController extends Controller
 {
-/*     public function index()
-    {
-        return view('announcements');
-    } */
       
     public function index(Request $request)
     {
@@ -21,7 +17,6 @@ class AnnouncementController extends Controller
             $query->where('content', 'like', "%$search%");
         })->get();
 
-        // If AJAX request → return JSON only
         if ($request->ajax()&& $request->has('search')) {
            return response()->json(['announcements' => $announcements]);
         }

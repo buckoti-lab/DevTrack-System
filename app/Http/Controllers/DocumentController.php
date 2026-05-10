@@ -117,10 +117,5 @@ class DocumentController extends Controller
         "success"=>true,
         "file"=>$document_path
       ]);
-/*     $mime_type = mime_content_type($document_path );
-    return response()->file($document_path , [
-        'Content-Type' => $mime_type,
-    ]); */
-
     }
 }

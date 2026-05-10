@@ -16,6 +16,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DemoController;
 
 Route::get('/', [AuthController::class, 'index']);
+Route::get('/login', [AuthController::class, 'getLogin'])->name('login');
 Route::get('/login', [AuthController::class, 'getLogin'])->name('get.login');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('post.login');
 

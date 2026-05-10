@@ -14,11 +14,6 @@ class ProgressController extends Controller
     // Admin dashboard project listing
     public function index()
     {
-        // $projects = Quote::with('tasks')->get();
-        // return view('progress', compact('projects'));
-        // return view("progress");
-        // $projects = Quote::with(['tasks','project'])
-        //             ->get();
         $projects = Quote::with('project')->get();
         return view('progress', compact('projects'));
     }
@@ -30,21 +25,11 @@ class ProgressController extends Controller
         return response()->json($tasks);
     }
 
-    // Update task status
-/*     public function updateTaskStatus(Request $request, Task $task)
-    {
-        $task->update([
-            'status' => $request->status
-        ]);
-
-        return response()->json(['success' => true]);
-    } */
 
     public function editTask(Request $request, $id)
     {
 
         // logger($request);
-        
         $request->validate([
             'status' => 'required|in:todo,in_progress,done',
             'assigned_to' => 'nullable|string',

@@ -12,17 +12,6 @@ class AuthController extends Controller
 {
     public function index()
     {
-/*         if (Auth::check()) {
-/*             $role = "admin";
-            return $this->redirectUser($role);
-            //return $this->redirectUser(Auth::user()->$role); 
-
-            if(auth()->user()->role === "Adminj"){
-                 return redirect()->to('dashboard');
-            }else {
-                 return  redirect()->to('client_dashboard');
-           }
-        } */ 
 
         return view('index');
     }
@@ -46,15 +35,10 @@ class AuthController extends Controller
             Auth::login($user);
 
             return response()->json([
-                 'success' => true,
+                'success' => true,
                 'role' => $user->role
             ]);  
 
-/*             if($user->role === "Admin"){
-               return redirect()->to('dashboard');
-            }else {
-                return  redirect()->to('client_dashboard');
-           } */
         }
 
         return response()->json([
@@ -63,24 +47,11 @@ class AuthController extends Controller
         ]);
     }
 
-/*     private function redirectUser($role)
-    {
-        if ($role === 'Admin') return redirect()->to('dashboard');
-        if ($role === 'Other') return redirect()->to('client_dashboard');
-        // return redirect()->to('dashboard');
-    } */
-
     public function logout(Request $request)
     {
         if (Auth::check()) {
             $userId = Auth::id();
             $sessionId = session()->getId();
-
-            // Update session in DB
-            /*DB::table('user_sessions')
-                ->where('user_id', $userId)
-                ->where('session_id', $sessionId)
-                ->update(['is_online' => 0]);*/
 
             // Log user out
             Auth::logout();
