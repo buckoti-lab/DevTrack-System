@@ -79,11 +79,13 @@
         }
 
         .signature {
+            text-align: left;
             margin-top: 40px;
             font-size: 14px;
         }
 
         .terms {
+            text-align: left;
             margin-top: 35px;
             font-size: 12.5px;
             line-height: 1.5em;

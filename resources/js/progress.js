@@ -222,24 +222,24 @@ $("#addDemoForm").on("submit",function(e){
     });
 }
 
-function viewDemo(demoId){
+// function viewDemo(demoId){
 
-    $.get('/demo/view/'+demoId,function(response){
+//     $.get('/demo/view/'+demoId,function(response){
 
-        const filePath = response.file.file_path;
+//         const filePath = response.file.file_path;
 
-        if(filePath.endsWith("mp4")){
-            $("#viewDemoContent").html(`<video  controls>
-                                            <source src="${filePath}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>`);
-        }else{
-            $("#viewDemoContent").html(`<img src="${filePath}"></img>`);
-        }
+//         if(filePath.endsWith("mp4")){
+//             $("#viewDemoContent").html(`<video  controls>
+//                                             <source src="${filePath}" type="video/mp4">
+//                                             Your browser does not support the video tag.
+//                                         </video>`);
+//         }else{
+//             $("#viewDemoContent").html(`<img src="${filePath}"></img>`);
+//         }
         
-         $("#viewDemoModal").modal("show")
-    })
-}
+//          $("#viewDemoModal").modal("show")
+//     })
+// }
 
 function editDemo(demoId){
     $.get("/demo/view/"+demoId, function(response){

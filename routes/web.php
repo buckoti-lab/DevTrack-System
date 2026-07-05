@@ -17,7 +17,7 @@ use App\Http\Controllers\DemoController;
 
 Route::get('/', [AuthController::class, 'index']);
 Route::get('/login', [AuthController::class, 'getLogin'])->name('login');
-Route::get('/login', [AuthController::class, 'getLogin'])->name('get.login');
+// Route::get('/login', [AuthController::class, 'getLogin'])->name('get.login');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('post.login');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -57,7 +57,7 @@ Route::post('/change_password_api', [ChangepasswordController::class, 'changePas
 Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes.index');
 Route::get('/client_quotes', [QuoteController::class, 'client'])->name('quotes.client');
 Route::get('/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');
-Route::post('/quotes/store', [QuoteController::class, 'store'])->name('quotes.store');
+Route::post('/quotes/store', [QuoteController::class, 'store']);
 Route::get('/quotes/edit/{id}', [QuoteController::class, 'edit'])->name('quotes.edit');
 Route::put('/quotes/update/{id}', [QuoteController::class, 'update'])->name('quotes.update');
 Route::delete('/quotes/delete/{id}', [QuoteController::class, 'destroy'])->name('quotes.delete');

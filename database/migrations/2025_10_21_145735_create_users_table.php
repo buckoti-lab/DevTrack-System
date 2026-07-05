@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('last_name', 100);
             $table->string('phone', 15)->nullable();
             $table->enum('sex', ['Male', 'Female']);
-            $table->enum('role', ['Admin', 'Other']);
+            $table->enum('role', ['Admin', 'Developer','Client']);
             $table->string('profile_picture')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users');
             $table->string('password');

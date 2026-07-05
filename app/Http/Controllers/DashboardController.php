@@ -24,7 +24,7 @@ class DashboardController extends Controller
         // Profile image handling
         $profileImage = $user->profile_picture
             ? "uploads/images/profile_pictures/{$user->profile_picture}"
-            : "uploads/images/profile_pictures/default_profile_picture.jpg";
+            : "uploads/images/profile_pictures/default.jpg";
 
         $imageUrl = Storage::disk('public')->exists($profileImage)
             ? Storage::url($profileImage)

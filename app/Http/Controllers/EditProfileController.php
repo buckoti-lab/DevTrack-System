@@ -56,7 +56,7 @@ public function update(Request $request)
     if ($request->hasFile('profileimage')) {
         $picture = $request->file('profileimage');
         $pictureName = time() . '.' . $picture->getClientOriginalExtension();
-        $picture->move(public_path('storage/images/uploads/profile_pictures'), $pictureName);
+        $picture->move(public_path('storage/uploads/images/profile_pictures'), $pictureName);
 
         $user->profile_picture = $pictureName;
     }
@@ -67,6 +67,6 @@ public function update(Request $request)
         'success' => true,
         'message' => 'Profile updated successfully!'
     ]);
-}
+ }
 
 }

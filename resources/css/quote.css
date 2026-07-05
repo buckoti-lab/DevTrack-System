@@ -12,18 +12,10 @@
 }
 
 .btn-primary { background: #0d6efd; }
-.btn-primary:hover { background: #0b5ed7; }
-.btn-secondary { background: #93f055; }
-.btn-secondary:hover { background: #36e4d5; }
-
-.btn-info { background: #0dcaf0; }
-.btn-info:hover { background: #0bb9dd; }
-
+/* .btn-secondary { background: #93f055; } */
+/* .btn-info { background: #0dcaf0; }
 .btn-warning { background: #f0ad4e; color: #222; }
-.btn-warning:hover { background: #e0993f; }
-
-.btn-danger { background: #dc3545; }
-.btn-danger:hover { background: #bb2d3b; }
+.btn-danger { background: #dc3545; } */
 
 .btn-sm {
     padding: 6px 10px;

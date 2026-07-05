@@ -4,7 +4,7 @@
 
         <h3>Manage Documents</h3>
 
-        <button class="btn-add" id="openCreateModal">
+        <button class="btn-add btn btn-primary" id="openCreateModal">
             + Add Document
         </button>
 
@@ -22,26 +22,19 @@
         </thead>
 
         <tbody>
-            @forelse($documents as $document) 
+            @foreach($documents as $document) 
              <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $document->name }}</td>
                 <td>{{ $document->type }}</td>
                 <td>{{ $document->description }}</td>
                 <td>
-                    <!-- <button class="btn btn-sm btn-info"  onclick="viewDocument({{ $document->id }})">View</button>
-                    <button class="btn btn-sm btn-warning" onclick="editDocument({{ json_encode($document) }})">Edit</button>
-                    <button class="btn btn-sm btn-danger" onclick="deleteDocument({{ $document->id }})">Delete</button> -->
                     <button class="btn btn-sm btn-info btn-view" data-id="{{ $document->id }}">View</button>
                     <button class="btn btn-sm btn-warning btn-edit" data-doc='@json($document)'>Edit</button>
                     <button class="btn btn-sm btn-danger btn-delete" data-id="{{ $document->id }}">Delete</button>
                 </td>
              </tr>
-            @empty
-             <tr>
-              <td colspan="7" class="text-center py-4">No document found</td>
-             </tr>
-            @endforelse
+            @endforeach
         </tbody>
     </table>
 </div>

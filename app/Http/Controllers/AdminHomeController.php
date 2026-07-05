@@ -49,10 +49,10 @@ class AdminHomeController extends Controller
             ->pluck('total', 'status');
 
         // DEVELOPER WORKLOAD BAR CHART
-        $developerWorkload = Task::selectRaw('users.sdms_id, COUNT(tasks.id) as total')
+        $developerWorkload = Task::selectRaw('users.id, COUNT(tasks.id) as total')
             ->join('users', 'tasks.assigned_to', '=', 'users.id')
             ->where('tasks.status', '!=', 'completed')
-            ->groupBy('users.sdms_id')
+            ->groupBy('users.id')
             ->pluck('total', 'users.sdms_id');
 
 

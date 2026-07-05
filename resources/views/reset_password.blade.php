@@ -26,7 +26,7 @@
                 if(response.success){
                 Swal.fire("Success!", response.message, "success").then(() => $('a[data-content="reset_user_password"]').trigger('click'));
                 }else{
-                    swal.fire({
+                    Swal.fire({
                         title:"Error!",
                         text:response.message,
                         icon:"error",
@@ -35,7 +35,7 @@
                 }
                },
                error: function(xhr,status,error){
-                swal.fire({
+                Swal.fire({
                     title:"Error!",
                     text:'Something went wrong.'+error+":::"+xhr.responseText,
                     icon:"error",

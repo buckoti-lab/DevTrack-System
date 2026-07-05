@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id();
 
             $table->string("project_title",200);
-            $table0->enum("status",["pending","rejected","accepted"])->dafault("pending");
+            $table->enum("status",["pending","rejected","accepted"])->dafault("pending");
 
             // Company Details
             $table->string('company_name');

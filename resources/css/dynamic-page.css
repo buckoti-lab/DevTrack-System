@@ -1,16 +1,17 @@
 .container {
-    width: fit-content;
-    max-width: 150%;
-    margin: 80px auto;
+    width: fit-content; 
+    max-width: 90%; 
+    width: 90% !important;
+    margin: 80px;
     background: #ffffff;
     overflow-x:auto;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 
 }
-.container h1{
+.container h3{
     text-align: center;
     margin-bottom: 25px;
     color: #333;
@@ -26,7 +27,7 @@
     padding: 15px;
     border-radius: 10px;
     margin:auto;
-    width: 100%;
+    width: 80%;
     margin-bottom: 20px;
     text-align: left;
   }
@@ -45,11 +46,7 @@
   display: flex;
   justify-content:space-between;
 }
-h3{
-    text-align: center;
-    margin-bottom: 25px;
-    color: #333;
-}
+
 select,
 textarea,
 input[type=datetime-local],
@@ -95,7 +92,8 @@ th{
 }
 table{
      border-collapse:collapse;
-     width: 100%; 
+     width: 100%;
+     margin: auto;
 }
 
 #searchInput{

@@ -1,4 +1,5 @@
-$(document).ready(function(e){
+jQuery(document).ready(function(e){
+
        /*========Login page scripts=====*/
     $("#loginForm").on("submit",function(e){
     e.preventDefault();
@@ -14,7 +15,7 @@ $(document).ready(function(e){
     contentType:false,
     success: function(response) {
       if (response.success) {
-          if(response.role === "admin"){
+          if(response.role === "Admin"){
               window.location.href="dashboard";        
           }else{
               window.location.href="client_dashboard";

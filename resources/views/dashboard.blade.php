@@ -7,13 +7,13 @@
     <title>Dashboard</title>
 
     {{-- Laravel Vite css --}}    
-    @vite(['resources/css/app.css','resources/css/dashboard.css','resources/css/dynamic-page.css','resources/css/dataTables.bootstrap5.min.css','resources/css/bootstrap.min.css']) 
+    @vite(['resources/css/app.css','resources/css/dashboard.css','resources/css/dynamic-page.css','resources/css/dataTables.bootstrap5.min.css','resources/css/bootstrap.min.css','resources/css/sweetalert2.min.css']) 
     
 </head>
 <body>
    <div id="side-navbar" class="side-navbar">
      <div>
-      <h2>&nbsp; <span>SOM system </span></h2>
+      <h2>&nbsp; <span>DevTrack System </span></h2>
       <div id="upper-nav">
           <a href="#" data-content="home"><img src="storage/icon/house-solid-full.svg">&nbsp;<span>Home</span></a>
             @if(!empty( Auth::user()->last_name ))
@@ -93,30 +93,19 @@
 
 {{-- Laravel Vite scripts --}}    
 @vite([
+  'resources/js/app.js',
  'resources/js/jquery-3.7.1.min.js',         
-
+ 'resources/css/sweetalert2.min.js',
+ 'resources/js/bootstrap.bundle.min.js', 
  'resources/js/jquery.dataTables.min.js',     
  'resources/js/dataTables.bootstrap5.min.js', 
-
- 'resources/js/bootstrap.bundle.min.js',      
- 'resources/js/chart.js',
-
- 'resources/js/app.js',
  'resources/js/dashboard.js',
  'resources/js/functions.js',
 
 ])
 
-<!--  'resources/js/sweetalert2.all.min.js' 'resources/css/sweetalert2.min.css  'resources/js/progress.js',
- 'resources/js/quote.js', -->
-<!-- <script src="storage/libraries/sweetalert2.all.min.js"></script> -->
-
 @guest
-<!-- <script>window.location = "/login";</script> -->
- <!-- <script>window.location = "{{ route('get.login') }}"</script> -->
-  <script>
-    window.location.href = "{{ route('get.login') }}";
-</script>
+<script>window.location = "/login";</script>
 @endguest
 
 </body>

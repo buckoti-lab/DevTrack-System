@@ -20,7 +20,7 @@ body {
 .logo {
     width: 40px;
     height: 40px;
-    object-fit: contain;
+    object-fit: cover;
     margin-right: 10px;
     border-radius:50%;
 }
@@ -35,10 +35,13 @@ body {
 }
 
 .hero-logo {
-    width: 110px;
-    max-width: 40%;
+    width:10rem;
+    /* max-width: 40%; */
     margin-bottom: 20px;
+    height:10rem;
     border-radius:50%;
+
+    object-fit: cover;
 }
 
 .hero h1 {
@@ -90,7 +93,7 @@ body {
 
     <!-- LOGO + BRAND -->
     <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="storage/uploads/images/web_images/logo.png" class="logo" alt="logo">
+        <img src="storage/uploads/images/web_images/FullLogo.png" class="logo" alt="logo">
         <span class="fw-bold">DevTrack</span>
     </a>
 
@@ -115,7 +118,7 @@ body {
             </li>
 
             <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-                <a class="btn btn-primary btn-custom w-100 w-lg-auto" href="{{ route('get.login') }}">Login</a>
+                <a class="btn btn-primary btn-custom w-100 w-lg-auto" href="{{ route('login') }}">Login</a>
             </li>
 
             <!-- <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
@@ -131,7 +134,7 @@ body {
 <!-- HERO -->
 <section class="hero">
 
-    <img src="storage/uploads/images/web_images/logo.png" class="hero-logo" alt="logo">
+    <img src="storage/uploads/images/web_images/FullLogo.png" class="hero-logo" alt="logo">
 
     <h1>Software Development Tracking System</h1>
     <p>Manage, track, and monitor software projects from request to delivery.</p>

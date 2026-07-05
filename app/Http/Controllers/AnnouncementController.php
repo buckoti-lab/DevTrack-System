@@ -21,7 +21,7 @@ class AnnouncementController extends Controller
            return response()->json(['announcements' => $announcements]);
         }
 
-        if(auth()->user()->role !== "admin"){
+        if(auth()->user()->role !== "Admin"){
             return view('client_announcements', compact('announcements'));
         }
         // Normal load

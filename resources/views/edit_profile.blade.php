@@ -23,7 +23,7 @@
             <option value="Female" {{ Auth::user()->sex == 'Female' ? 'selected' : '' }}>Female</option>
         </select>
 
-        <input type="submit" value="Update profile">
+        <input type="submit" class="btn btn-primary"  value="Update profile">
     </form>
 </div>
 

@@ -35,7 +35,7 @@
 
      
     if(new_password === "" || repeated_password=== "" || old_password===""){
-      swal.fire({
+      Swal.fire({
         title:"Error",
         text:"All fields are required!",
         icon:"error",
@@ -66,7 +66,7 @@
         processData: false,
         success: function (response) {
           if(response.success){
-             swal.fire("Success!",response.message,"success").then(() => window.location.href = "{{ route('logout') }}");
+             Swal.fire("Success!",response.message,"success").then(() => window.location.href = "{{ route('logout') }}");
           }else{
             Swal.fire({
             title: 'Error!',

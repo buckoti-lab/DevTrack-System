@@ -4,8 +4,16 @@
 
         <h3>Manage Users</h3>
 
-        <button class="btn-add" id="openCreateModal">+ Add User</button>
-        <a href="{{ route('users.exportPDF') }}" class="btn-download">Export PDF</a>
+        <!-- <button class="btn-add" id="openCreateModal">+ Add User</button> -->
+        <!-- <a href="{{ route('users.exportPDF') }}" class="btn-download">Export PDF</a> -->
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+          <a href="{{ route('users.exportPDF') }}" class="btn-download btn btn-primary">Export PDF</a>
+
+        <button class="btn-add btn-primary" id="openCreateModal">
+            + Add User
+        </button>
+    </div>
 
     <!-- USERS TABLE -->
     <table id="users-table">

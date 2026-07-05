@@ -1,12 +1,14 @@
 <div class="container">
     
-        <h3>Manage Announcements</h3>
+    <h3>Manage Announcements</h3>
 
-        <button class="btn-add" id="openCreateModal">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+          <a href="{{ route('announcements.exportPDF') }}" class="btn-download btn btn-primary">Export PDF</a>
+
+        <button class="btn-add btn btn-primary" id="openCreateModal">
             + Add Announcement
         </button>
-
-    <a href="{{ route('announcements.exportPDF') }}" class="btn-download">Export PDF</a>
+    </div>
 
 
     <!-- ANNOUNCEMENTS TABLE -->
@@ -55,8 +57,9 @@
                     <textarea name="content" id="content" style="resize:none;" placeholder="Add content here." required></textarea>
                     <select name="target" id="target" required>
                     <option value="" selected disabled>Select target</option>
-                    <option value="Admin" >Admin</option>
-                    <option value="Other">Other</option>
+                        <option value="Admin" >Admin</option>
+                        <option value="Other">Developer</option>
+                        <option value="Other">Client</option>
                     </select>
                     <input type="datetime-local" id="expires_at" name="expires_at" required> 
                     <div class="modal-buttons">

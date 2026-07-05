@@ -33,7 +33,7 @@ $(document).ready(function () {
         const formData = new FormData(this);
 
         $.ajax({
-            url: "{{ route('quotes.store') }}",
+            url: "/quotes/store",
             type: 'POST',
             data: formData,
             contentType: false,
@@ -52,11 +52,7 @@ $(document).ready(function () {
         });
     });
 
-
-    // =======================
     // EDIT QUOTE
-    // =======================
-
     $('#editForm').on('submit', function (e) {
         e.preventDefault();
 
@@ -185,9 +181,9 @@ function editQuote(q) {
 
     $("#edit-items-container").html("");
 
-    q.items  = JSON.parse(q.items);
+    let quote_items  = JSON.parse(q.items);
 
-    q.items.forEach((item, i) => {
+    quote_items.forEach((item, i) => {
 
           $("#edit-items-container").append(`
                       <div class="item-row row mb-2">

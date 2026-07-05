@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('quote_id')->constrained('quotes')->onDelete('cascade')->unique();
-            $table->enum("status",["in_progress","completed","failed"]);
+            $table->enum("status",["in_progress","completed","failed"])->default("in_progress");
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('announcements', function (Blueprint $table) {
             $table->id();
-            $table->enum("target",['Admin','Other']);
+            $table->enum("target",['Admin','Developer','Client']);
             $table->text("content");
             $table->date("expires_at");
             $table->foreignId('created_by')->constrained('users');

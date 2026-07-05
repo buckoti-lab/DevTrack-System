@@ -2,13 +2,15 @@
 
 <div class="container">
 
-        <h3>Manage Quotes</h3>
+    <h3>Manage Quotes</h3>
 
-        <button class="btn-add" id="openCreateModal">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+          <a href="{{ route('quotes.exportPDF') }}" class="btn-download btn btn-primary">Export PDF</a>
+
+        <button class="btn-add btn-primary" id="openCreateModal">
             + Add Quote
         </button>
-
-    <a href="{{ route('quotes.exportPDF') }}" class="btn-download">Export PDF</a>
+    </div>
 
 
             <table id="quotes-table">
@@ -44,21 +46,6 @@
                         <td>{{ $quote->created_at->format('d M Y') }}</td>
 
                         <td>
-                            <!-- <button class="btn btn-sm btn-info"
-                                    onclick="viewQuote({{ $quote->id }})">
-                                View
-                            </button>
-
-                            <button class="btn btn-sm btn-warning"
-                                    onclick="editQuote({{ json_encode($quote) }})">
-                                Edit
-                            </button>
-
-                            <button class="btn btn-sm btn-danger"
-                                    onclick="deleteQuote({{ $quote->id }})">
-                                Delete
-                            </button> -->
-
                             <button class="btn btn-sm btn-info btn-view" data-id="{{ $quote->id }}">View</button>
                             <button class="btn btn-sm btn-warning btn-edit" data-quote='@json($quote)'>Edit</button>
                             <button class="btn btn-sm btn-danger btn-delete" data-id="{{ $quote->id }}">Delete</button>
@@ -147,7 +134,7 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-secondary btn-sm " id="addItemRow">+ Add Item</button>
+                    <button type="button" class="btn btn-secondary btn-sm" id="addItemRow">+ Add Item</button>
 
                     <div class="modal-buttons">
                         <input type="submit" value="Submit">
@@ -246,7 +233,7 @@
                         <div id="edit-items-container">
                     </div>
 
-                    <button type="button" class="btn btn-info btn-sm" id="addEditItemRow">+ Add Item</button>
+                    <button type="button" class="btn btn-secondary btn-sm" id="addEditItemRow">+ Add Item</button>
 
                     <hr>
 

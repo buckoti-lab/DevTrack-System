@@ -20,7 +20,6 @@ return new class extends Migration {
             $table->enum('priority', ['low', 'medium', 'high'])->default('medium');
             $table->foreignId('assigned_to')->nullable()->constrained('users')->nullOnDelete();
 
-            // Optional extra info per task
             $table->decimal('estimated_hours', 8, 2)->default(0);
             $table->decimal('actual_hours', 8, 2)->default(0);
 
